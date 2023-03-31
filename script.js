@@ -1,9 +1,23 @@
-// Get the play button element by its ID
-const playButton = document.getElementById("playButton");
-
-// Create the event listener for the play button click
-playButton.addEventListener("click", function() {
-  // Logged to the console when the play button is clicked
-  console.log("Play button clicked!");
-}); 
-
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the buttons
+    const previousButton = document.querySelector(".previous");
+    const playButton = document.querySelector(".play");
+    const nextButton = document.querySelector(".next");
+  
+    // Event listeners for each button
+    previousButton.addEventListener("click", function () {
+      console.log("Previous button clicked");
+      // functionality for the previous button here
+    });
+  
+    playButton.addEventListener("click", function () {
+      console.log("Play button clicked");
+      // functionality for the play button here
+    });
+  
+    nextButton.addEventListener("click", function () {
+      console.log("Next button clicked");
+      // functionality for the next button here
+    });
+  });
+  
