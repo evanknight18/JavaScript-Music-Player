@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Player</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="cell small-12 large-auto foundation-border">
+
+                    <!-- Parent container for Playlist, Music Player, and Artist Information -->
+                    <div class="grid-x grid-padding-x">
+
+                        <!-- Playlist Container -->
+                        <div class="cell small-12 large-4 foundation-border">
+                            <div class="playlist-container">
+                                <h3>Playlist</h3>
+                                <!-- Playlist items here -->
+                            </div>
+                        </div>
+
+                        <!-- Music Player Container -->
+                        <div class="cell small-12 large-4 foundation-border">
+                            <div class="music-player">
+
+                                <!-- Album Cover Container -->
+                                <div class="album-cover-container">
+                                    <img src="path/to/album-cover.jpg" alt="Album Cover" class="album-cover">
+                                </div>
+                                <div class="cell small-4">
+                                    <h3 class="song-title">Song Title</h3>
+                                    <h5 class="artist-name">Artist Name</h5>
+                                </div>
+                                <div class="cell small-4 text-center">
+                                    <div class="grid-x grid-padding-x">
+                                        <div class="cell small-4">
+                                            <button class="button previous">
+                                                <i class="fas fa-backward"></i>
+                                            </button>
+                                        </div>
+                                        <div class="cell small-4">
+                                            <button class="button play" id="playButton">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </div>
+                                        <div class="cell small-4">
+                                            <button class="button next">
+                                                <i class="fas fa-forward"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cell small-4 text-right">
+                                    <span class="current-time">0:00</span>
+                                    /
+                                    <span class="total-time">4:30</span>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                            </div>
+
+                            <div class="volume-control grid-x grid-padding-x align-middle">
+                                <div class="cell small-4">
+                                    <i class="fas fa-volume-down"></i>
+                                </div>
+                                <div class="cell small-4">
+                                    <input type="range" class="slider" min="0" max="100" step="1" value="75">
+                                </div>
+                                <div class="cell small-4">
+                                    <i class="fas fa-volume-up"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artist Information Container -->
+                        <div class="cell small-12 large-4 foundation-border">
+                            <div class="artist-info-container">
+                                <h3>Artist Information</h3>
+                                <!-- Artist information here -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
