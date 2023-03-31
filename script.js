@@ -5,5 +5,5 @@ const playButton = document.getElementById("playButton");
 playButton.addEventListener("click", function() {
   // Logged to the console when the play button is clicked
   console.log("Play button clicked!");
-});
+}); 
 
