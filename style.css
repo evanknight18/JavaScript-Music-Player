@@ -35,12 +35,17 @@ button:hover {
 }
 
 .playlist-container {
-  padding: 60px;
+  text-align: center;
+  padding: 15px;
+  margin: 23px;
+  border-bottom: 5px solid red;
 }
 
 
 .artist-info-container {
-  padding: 60px;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 5px solid red;
 }
 
 .album-cover-wrapper {
