@@ -1,3 +1,11 @@
+const searchButton = document.querySelector('.search-button');
+const searchInput = document.querySelector('.search-input');
+
+searchButton.addEventListener('click', () => {
+  const query = searchInput.value;
+  searchSongs(query);
+});
+
 
   document.addEventListener("DOMContentLoaded", function () {
     // Select the buttons
@@ -30,4 +38,16 @@ playButton.addEventListener("click", () => {
 
   playIcon.style.display = playIcon.style.display === "none" ? "" : "none";
   pauseIcon.style.display = pauseIcon.style.display === "none" ? "" : "none";
+});
+
+playButton.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+    playButton.classList.remove('fa-play');
+    playButton.classList.add('fa-pause');
+  } else {
+    audio.pause();
+    playButton.classList.remove('fa-pause');
+    playButton.classList.add('fa-play');
+  }
 });
