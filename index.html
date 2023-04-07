@@ -12,6 +12,7 @@
     <body>
 
     
+        <button onclick="login()">Log in to Spotify</button>
 
 
         <div class="grid-container">
@@ -54,6 +55,7 @@
                                         <img src="path/to/album-cover.jpg" alt="Album Cover" class="album-cover">
                                     </div>
                                 </div>
+
                                 <div class="controls-container">
                                     <div class="cell small-4">
 
@@ -63,47 +65,14 @@
                                         </div>
                             </div>
 
-                                    <div class="cell small-4 text-center">
-                                        <div class="grid-x grid-padding-x">
-                                            <div class="cell small-4">
-                                                <button class="button custom-button previous">
-                                                    <i class="fas fa-backward"></i>
-                                                  </button>
-                                                </div>
-                                                <div class="cell small-4">
-                                                  <button class="button custom-button play" id="playButton">
-                                                    <i class="fas fa-play"></i>
-                                                    <i class="fas fa-pause" style="display: none;"></i>
-                                                  </button>
-                                                </div>
-                                                <div class="cell small-4">
-                                                  <button class="button custom-button next">
-                                                    <i class="fas fa-forward"></i>
-                                                  </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell small-4 text-right">
-                                        <span class="current-time">0:00</span>
-                                        /
-                                        <span class="total-time">4:30</span>
-                                    </div>
-                                </div>
+                                <div class="audio-player">
+                                    <audio id="audio" src="" controls></audio>
+                                  </div>
 
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                </div>
+                                
 
-                                <div class="volume-control grid-x grid-padding-x align-middle">
-                                    <div class="cell small-3 text-right">
-                                        <i class="fas fa-volume-down"></i>
-                                    </div>
-                                    <div class="cell small-6 text-center">
-                                        <input type="range" class="slider" min="0" max="100" step="1" value="75">
-                                    </div>
-                                    <div class="cell small-3">
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -125,5 +94,3 @@
         <script src="ticketmasterapi.js"></script>
     </body>
 </html>
-
-
