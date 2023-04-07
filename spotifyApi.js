@@ -1,54 +1,93 @@
-const accessToken = 'access_token_here';
+const clientId = '0fa6dcd1849c4db4ba3af4fa55006faf'; // replace with your client ID
+const redirectUri = 'http://localhost:5500'; // replace with your redirect URI
+const accessToken = 'BQC09_fStrV-8jHt5MfzS1JH2f2tpl6ru8U0N9OW-tbKtg7bHLKZfumHAlcP0al-DbVkniKn8X4SdyDq7JvU84gWJqxeVIbHdK_lAHW6vgWL4A0MwIKB'; // replace with your access token
+const artistId = '0epOFNiUfyON9EYx7Tpr6V'; // replace with the artist ID
 
-// Fetch the currently playing track
-fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-  headers: {
-    'Authorization': `Bearer ${accessToken}`,
-  },
-})
-  .then(response => response.json())
-  .then(data => {
-    // Extract the album cover URL
-    const albumCoverUrl = data.item.album.images[0].url;
+const scopes = [
+  'user-read-email',
+  'user-read-private',
+  'playlist-read-private',
+  'user-library-read',
+  'user-top-read',
+  'user-follow-read',
+  'user-read-playback-state',
+  'user-modify-playback-state'
+];
 
-    // Update the img src attribute
-    const albumCoverImg = document.querySelector('.album-cover');
-    albumCoverImg.src = albumCoverUrl;
-  })
-  .catch(error => {
-    console.error('Error fetching the currently playing track:', error);
+const authorizeUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=${encodeURIComponent(scopes.join(' '))}`;
+
+function login() {
+  window.location = authorizeUrl;
+}
+
+function handleRedirect() {
+  const accessToken = window.location.hash
+    .substring(1)
+    .split('&')
+    .reduce((initial, item) => {
+      if (item) {
+        const parts = item.split('=');
+        initial[parts[0]] = decodeURIComponent(parts[1]);
+      }
+      return initial;
+    }, {}).access_token;
+
+  if (accessToken) {
+    console.log('Access token:', accessToken);
+    initializePlayer(accessToken);
+  }
+}
+
+async function initializePlayer(token) {
+  const player = new Spotify.Player({
+    name: 'My Web Player',
+    getOAuthToken: cb => { cb(token); }
   });
 
-// Ticketmaster.init({
-//   apiKey: 'WuvIyt8Lt5KDtWFNhsvZieAxgi6Gqiuw'
-// });
+  // Error handling
+  player.addListener('initialization_error', ({ message }) => { console.error(message); });
+  player.addListener('authentication_error', ({ message }) => { console.error(message); });
+  player.addListener('account_error', ({ message }) => { console.error(message); });
+  player.addListener('playback_error', ({ message }) => { console.error(message); });
 
-fetch('https://app.ticketmaster.com/discovery/v2/events.json?apikey=WuvIyt8Lt5KDtWFNhsvZieAxgi6Gqiuw')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
+  // Playback status updates
+  player.addListener('player_state_changed', state => { console.log(state); });
+
+  // Ready
+  player.addListener('ready', ({ device_id }) => {
+    console.log('Ready with Device ID', device_id);
+    fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Get the first track URI from the response
+      const trackUri = data.tracks[0].uri;
+
+      // Play the track using the Spotify Web Playback SDK
+      player.play(trackUri)
+        .then(() => {
+          console.log('Track started');
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    })
+    .catch(error => {
+      console.error(error);
+    });
   });
 
-  fetch('https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=WuvIyt8Lt5KDtWFNhsvZieAxgi6Gqiuw&keyword=ARTIST_NAME')
-  .then(response => response.json())
-  .then(data => {
-    const artist = data._embedded.attractions[0]; // Get the first artist in the results
-    console.log(artist.name);
-    console.log(artist.url);
-    console.log(artist.images[0].url); // Get the first image for the artist
-  })
-  .catch(error => {
-    console.error(error);
+  // Not Ready
+  player.addListener('not_ready', ({ device_id }) => {
+    console.log('Device ID has gone offline', device_id);
   });
 
-// Ticketmaster.discovery.event.find('music', {
-//   countryCode: 'US',
-//   city: 'New York'
-// }).then(function(response) {
-//   console.log(response);
-// }).catch(function(error) {
-//   console.error(error);
-// });
+  // Connect to the player!
+  player.connect();
+}
+
+window.onload = handleRedirect;
+
