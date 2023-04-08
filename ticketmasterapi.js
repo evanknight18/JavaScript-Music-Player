@@ -15,7 +15,7 @@ searchForm.addEventListener("submit", function(event) {
     })
     .then(function(data) {
       var events = data._embedded.events;
-      let html = "";
+      var html = "";
       for (let i = 0; i < events.length; i++) {
         var event = events[i];
         var eventName = event.name;
@@ -23,7 +23,7 @@ searchForm.addEventListener("submit", function(event) {
         var eventTime = event.dates.start.localTime;
         var venueName = event._embedded.venues[0].name;
         // html += appends html tags and content to the events variable
-        // sorts the event listings in the column
+        // sorts the event listings in the events container on the webpage
         html +=
         html += "<div>";
         html += "<h2>" + eventName + "</h2>";
@@ -33,6 +33,8 @@ searchForm.addEventListener("submit", function(event) {
       }
       searchResults.innerHTML = html;
     })
+    // .catch(function(error)) will show an error message anytime something other than
+    //an artist is searched in the search bar
     .catch(function(error) {
       console.log("An error occurred:", error);
       searchResults.innerHTML = "Sorry, we could not find any events matching your search.";
