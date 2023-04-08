@@ -137,3 +137,11 @@ function clearPlaylist() {
     albumCoverElement.src = "";
 }
 
+
+//displays none in album cover image instead of the broken image key every
+//time a new mp3 file is selected from choose file
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelectorAll('img').forEach(function(img){
+       img.onerror = function(){this.style.display='none';};
+    })
+ });

@@ -10,7 +10,7 @@ searchForm.addEventListener("submit", function(event) {
   var searchQuery = document.querySelector("#search-query").value;
 
   // logs out each search in the console, erases on refresh
-  console.log(searchQuery)
+  console.log(searchQuery);
 
   //fetches ticketmaster api
   fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=WuvIyt8Lt5KDtWFNhsvZieAxgi6Gqiuw&keyword=${searchQuery}`)
