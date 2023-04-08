@@ -24,7 +24,6 @@ searchForm.addEventListener("submit", function(event) {
         var venueName = event._embedded.venues[0].name;
         // html += appends html tags and content to the events variable
         // sorts the event listings in the events container on the webpage
-        html +=
         html += "<div>";
         html += "<h6>" + eventName + "</h6>";
         html += "<p>" + eventDate + " " + eventTime + "</p>";
