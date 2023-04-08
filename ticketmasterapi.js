@@ -26,7 +26,7 @@ searchForm.addEventListener("submit", function(event) {
         // sorts the event listings in the events container on the webpage
         html +=
         html += "<div>";
-        html += "<h2>" + eventName + "</h2>";
+        html += "<h6>" + eventName + "</h6>";
         html += "<p>" + eventDate + " " + eventTime + "</p>";
         html += "<p>" + venueName + "</p>";
         html += "</div>";
