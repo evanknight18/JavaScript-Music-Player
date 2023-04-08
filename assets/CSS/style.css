@@ -79,7 +79,8 @@ button:hover {
 /* Buttons */
 .custom-button {
   background-color: transparent;
-  color: #f00; /* Red color for the icons */
+  color: #f00;
+  /* Red color for the icons */
 }
 
 .transparent {

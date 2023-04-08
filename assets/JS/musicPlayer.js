@@ -41,14 +41,14 @@ document.querySelector("#local-file").addEventListener("change", async function 
     }
 });
 
-playlistContainer.addEventListener("click", function(event) {
+playlistContainer.addEventListener("click", function (event) {
     const songElement = event.target.closest(".song");
     if (songElement) {
-      const index = songElement.dataset.index;
-      loadSong(index);
-      playSong();
+        const index = songElement.dataset.index;
+        loadSong(index);
+        playSong();
     }
-  });
+});
 
 clearPlaylistButton.addEventListener("click", function (event) {
     clearPlaylist();
@@ -128,12 +128,12 @@ function clearPlaylist() {
     displayPlaylist();
     audio.pause();
     audio.src = "";
-  
+
     // Clear the "Now Playing" field
     const titleElement = document.querySelector(".song-title");
     titleElement.innerHTML = "";
     const artistElement = document.querySelector(".artist-name");
     artistElement.innerHTML = "";
     albumCoverElement.src = "";
-  }
+}
 

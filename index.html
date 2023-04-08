@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Music Player</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="assets\CSS\style.css">
+</head>
 
-        <div class="grid-container">
-            <div class="grid-x grid-padding-0 align-center">
-                <div class="cell small-12 large-auto foundation-border">
+<body>
 
-                    <!-- Parent container for Playlist, Music Player, and Artist Information -->
-                    <div class="grid-x grid-padding-x">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-0 align-center">
+            <div class="cell small-12 large-auto foundation-border">
 
-                        <!-- Playlist Container -->
-                        <div class="cell medium-12 large-3 foundation-border">
-                            <div class="playlist-container">
-                                
-                                <h3>Playlist</h3>
-                                <!-- Playlist items here -->
-                            </div>
-                            <button class="custom-button" id="clear-playlist-button">Clear Playlist</button>
+                <!-- Parent container for Playlist, Music Player, and Artist Information -->
+                <div class="grid-x grid-padding-x">
 
+                    <!-- Playlist Container -->
+                    <div class="cell medium-12 large-3 foundation-border">
+                        <div class="playlist-container">
+
+                            <h3>Playlist</h3>
+                            <!-- Playlist items here -->
                         </div>
-
-                        <!-- Music Player Container -->
-                        <div class="cell small-12 large-6 foundation-border">
-                            <div class="music-player">
-
-                                <input type="file" id="local-file" accept="audio/mp3" />
-
-                                <!-- Album Cover Container -->
-                                <div class="album-cover-wrapper">
-                                    <!-- Album Cover Container -->
-                                    <div class="album-cover-container">
-                                        <img src="path/to/album-cover.jpg" alt="Album Cover" class="album-cover">
-                                    </div>
-                                </div>
-
-                                <div class="controls-container">
-                                    <div class="cell small-4">
-
-                                        <div class="song-info">
-                                            <h3 class="song-title">Song Title</h3>
-                                            <h5 class="artist-name">Artist Name</h5>
-                                        </div>
-                            </div>
-                                <div class="audio-player text-center">
-                                    <audio id="audio" src="" controls></audio>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Artist Information Container -->
-                        <div class="cell small-12 large-3 foundation-border text-center">
-                            <form id="search-form">
-                                <label for="search-query">Search:</label>
-                                <input type="text" id="search-query" name="search-query" placeholder="Events">
-                                <button class="custom-button" type="submit">Submit</button>
-                              </form>
-                              
-                              <div id="searchResults"></div>
-                        </div>
+                        <button class="custom-button" id="clear-playlist-button">Clear Playlist</button>
 
                     </div>
+
+                    <!-- Music Player Container -->
+                    <div class="cell small-12 large-6 foundation-border">
+                        <div class="music-player">
+
+                            <input type="file" id="local-file" accept="audio/mp3" />
+
+                            <!-- Album Cover Container -->
+                            <div class="album-cover-wrapper">
+                                <!-- Album Cover Container -->
+                                <div class="album-cover-container">
+                                    <!-- <img src="path/to/album-cover.jpg" alt="Album Cover" class="album-cover"> -->
+                                </div>
+                            </div>
+
+                            <div class="controls-container">
+                                <div class="cell small-4">
+
+                                    <div class="song-info">
+                                        <h3 class="song-title">Song Title</h3>
+                                        <h5 class="artist-name">Artist Name</h5>
+                                    </div>
+                                </div>
+                                <div class="audio-player text-center">
+                                    <audio id="audio" src="" controls></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Event Container -->
+                    <div class="cell small-12 large-3 foundation-border text-center">
+                        <form id="search-form">
+                            <label for="search-query">Event:</label>
+                            <input type="text" id="search-query" name="search-query" placeholder="Events">
+                            <button class="custom-button" type="submit">Submit</button>
+                        </form>
+
+                        <div id="searchResults"></div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <script src="musicPlayer.js"></script>
-        <script src="ticketmasterapi.js"></script>
+    </div>
+    <script src="assets\JS\musicPlayer.js"></script>
+    <script src="assets\JS\ticketmasterapi.js"></script>
 
-    </body>
+</body>
+
 </html>
-
