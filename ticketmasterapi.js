@@ -15,7 +15,7 @@ searchForm.addEventListener("submit", function(event) {
     })
     .then(function(data) {
       var events = data._embedded.events;
-      var html = "";
+      let html = "";
       for (let i = 0; i < events.length; i++) {
         var event = events[i];
         var eventName = event.name;
