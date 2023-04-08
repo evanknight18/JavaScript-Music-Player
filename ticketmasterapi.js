@@ -6,9 +6,13 @@ var searchResults = document.querySelector("#searchResults");
 searchForm.addEventListener("submit", function(event) {
   // keeps this event from running infinitely
   event.preventDefault(); 
-  
+  //logs out every search query, clears on refresh
   var searchQuery = document.querySelector("#search-query").value;
-  
+
+  // logs out each search in the console, erases on refresh
+  console.log(searchQuery)
+
+  //fetches ticketmaster api
   fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=WuvIyt8Lt5KDtWFNhsvZieAxgi6Gqiuw&keyword=${searchQuery}`)
     .then(function(response) {
       return response.json();
@@ -23,9 +27,9 @@ searchForm.addEventListener("submit", function(event) {
         var eventTime = event.dates.start.localTime;
         var venueName = event._embedded.venues[0].name;
         // html += appends html tags and content to the events variable
-        // sorts the event listings in the events container on the webpage
+        // sorts the event listings in the events container on the webpage with style
         html += "<div>";
-        html += "<h6>" + eventName + "</h6>";
+        html += "<h5>" + eventName + "</h5>";
         html += "<p>" + eventDate + " " + eventTime + "</p>";
         html += "<p>" + venueName + "</p>";
         html += "</div>";

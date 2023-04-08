@@ -168,26 +168,8 @@ input[type="range"]::-ms-track {
 }
 
 #searchResults {
-  max-height: 400px;
+  /* height of the events listing */
+  max-height: 480px;
+  /* scrolls through events instead of having them keep going continuously */
   overflow-y: scroll;
-}
-
-.event {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.event h3 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.event p {
-  margin: 0;
-  font-size: 1em;
 }
