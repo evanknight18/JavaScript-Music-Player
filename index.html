@@ -78,10 +78,14 @@
                         </div>
                         <!-- Artist Information Container -->
                         <div class="cell small-12 large-3 foundation-border text-center">
-                            <div class="events-container">
-                                <h3>Events</h3>
-                                <ul class="events-list"></ul>
-                            </div>
+                            <form id="search-form">
+                                <label for="search-query">Search:</label>
+                                <input type="text" id="search-query" name="search-query" placeholder="Events">
+                                <button type="submit">Submit</button>
+                              </form>
+                              
+                              <div id="searchResults"></div>
+                            <!-- <div id="searchResults"></div> -->
                         </div>
 
                     </div>
