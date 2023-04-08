@@ -41,7 +41,6 @@ button:hover {
   border-bottom: 5px solid red;
 }
 
-
 .artist-info-container {
   text-align: center;
   padding: 5px;
@@ -78,9 +77,9 @@ button:hover {
 
 /* Buttons */
 .custom-button {
-  background-color: transparent;
-  color: #f00;
-  /* Red color for the icons */
+  display: flex;
+  color: red;
+  text-align: center;
 }
 
 .transparent {
@@ -91,58 +90,6 @@ button:hover {
 .search-button {
   padding: 0;
   color: #F8F8F8;
-}
-
-/* Album cover */
-.album-cover {
-  border: 1px solid #f00;
-}
-
-/* Progress bar */
-.progress-bar {
-  background-color: #f00;
-}
-
-/* Volume control */
-input[type="range"] {
-  -webkit-appearance: none;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  background-color: #444;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background-color: #f00;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  background-color: #f00;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-track {
-  background-color: #444;
-}
-
-input[type="range"]::-ms-thumb {
-  background-color: #f00;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-ms-track {
-  background-color: #444;
 }
 
 /* Input group */
@@ -177,22 +124,12 @@ input[type="range"]::-ms-track {
   overflow-y: scroll;
 }
 
-.event {
+.eventSearch {
+  color: red;
+}
+
+#local-file {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.event h3 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.event p {
-  margin: 0;
-  font-size: 1em;
+  padding: 5px;
+  cursor: pointer;
 }
