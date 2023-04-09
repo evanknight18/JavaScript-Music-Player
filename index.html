@@ -10,8 +10,10 @@
     </head>
 
     <body>
-
-        <div class="grid-container">
+        <div class="title-container">
+            <h1>MyPlaylistr</h1>
+          </div>        
+          <div class="grid-container">
             <div class="grid-x grid-padding-0 align-center">
                 <div class="cell small-12 large-auto foundation-border">
 
@@ -32,8 +34,8 @@
                         <!-- Music Player Container -->
                         <div class="cell small-12 large-6 foundation-border">
                             <div class="music-player">
-
-                                <input type="file" id="local-file" accept="audio/mp3" />
+                                <label for="local-file" id="file-label">Choose a file</label>
+                                <input type="file" id="local-file" accept="audio/flac audio/mp3" hidden />
 
                                 <!-- Album Cover Container -->
                                 <div class="album-cover-wrapper">
@@ -73,6 +75,7 @@
             </div>
         </div>
         <script src="musicPlayer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js"></script>
         <script src="ticketmasterapi.js"></script>
 
     </body>
