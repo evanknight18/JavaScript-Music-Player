@@ -9,7 +9,6 @@ var playlistContainer = document.querySelector(".playlist-container");
 var audio = document.querySelector("#audio");
 var albumCoverElement = document.querySelector(".album-cover");
 var clearPlaylistButton = document.querySelector("#clear-playlist-button");
-var albumCoverElement = document.querySelector(".album-cover");
 
 
 // Initialize event listeners
