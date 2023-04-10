@@ -32,16 +32,23 @@ button:hover {
   flex-direction: column;
   height: 600px;
   padding: 60px;
+  
 }
 
 .playlist-container {
   text-align: center;
   padding: 15px;
   margin: 23px;
-  border-bottom: 5px solid red;
+  
 }
 
+#file-label {
+    color: red;
+}
 
+.search-form {
+  color: red;
+}
 .artist-info-container {
   text-align: center;
   padding: 5px;
