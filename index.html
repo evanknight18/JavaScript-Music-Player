@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
-        
+    </head>
 
     <body>
         <div class="title-container">
-            <h1>MyPlaylist</h1>
+            <h1>MyPlaylistr</h1>
           </div>        
           <div class="grid-container">
             <div class="grid-x grid-padding-0 align-center">
@@ -62,7 +62,8 @@
                         <!-- Artist Information Container -->
                         <div class="cell small-12 large-3 foundation-border text-center">
                             <form id="search-form">
-                                <input type="text" id="search-query" name="search-query" placeholder="Search Events">
+                                <label for="search-query">Search:</label>
+                                <input type="text" id="search-query" name="search-query" placeholder="Events">
                                 <button class="custom-button" type="submit">Submit</button>
                               </form>
                               
@@ -76,8 +77,6 @@
         <script src="musicPlayer.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js"></script>
         <script src="ticketmasterapi.js"></script>
-     
 
     </body>
 </html>
-
