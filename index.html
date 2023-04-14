@@ -11,7 +11,7 @@
 
     <body>
         <div class="title-container">
-            <h1>MyPlaylist</h1>
+            <h1>My Playlist</h1>
           </div>        
           <div class="grid-container">
             <div class="grid-x grid-padding-0 align-center">
@@ -22,12 +22,15 @@
 
                         <!-- Playlist Container -->
                         <div class="cell medium-12 large-3 foundation-border">
+                            <div id="billboard-results"></div>
+
                             <div class="playlist-container">
-                                
+                              
                                 <h3>Playlist</h3>
                                 <!-- Playlist items here -->
                             </div>
                             <button class="custom-button" id="clear-playlist-button">Clear Playlist</button>
+                        
 
                         </div>
 
@@ -69,13 +72,19 @@
                               
                               <div id="searchResults"></div>
                         </div>
+                        <div id="billboard-results" class="result-box"></div>
+                            <button id="fetch-button">Fetch Billboard Data</button>
 
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>
         </div>
         <script src="assets\JS\musicPlayer.js"></script>
         <script src="assets\JS\ticketmasterapi.js"></script>
+        <script src="assets/JS/billboardapi.js"></script>
 
     </body>
 </html>

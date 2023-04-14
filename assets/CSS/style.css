@@ -160,4 +160,12 @@ h1 {
   overflow-y: scroll;
 }
 
+.result-box {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
 
+.song-item {
+  margin-bottom: 5px;
+}
